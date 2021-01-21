@@ -1,3 +1,16 @@
+jag har valt att testa min sortering och merging pga det kan strula
+
+har försökt optimera efter bästa förmåga. megastressad
+
+har valt singelton på min servis som hämtar filmer. skulle aldrig ha gjort det om jag satt på jobbet men känner inte att jag hittar något bättre mönster att implementera i ett såhär litet projekt.
+
+
+
+
+
+
+
+
 # Tentamen i Clean code och testbar kod
 
 - Datum: 2021-01-21

@@ -18,8 +18,8 @@ namespace MovieLibrary.Controllers
         public IActionResult GetAllMovies(bool ascending = true)
         {
             var sorter = new Sorter();
-            var collector = new MovieInfoCollector();
-            var allMovies = collector.GetAllMovies();
+            var service = MovieService.GetServiceInstance();
+            var allMovies = service.GetAllMovies();
             var sortedList = sorter.SortList(allMovies, ascending);
             return new OkObjectResult(sortedList);
         }
@@ -29,8 +29,8 @@ namespace MovieLibrary.Controllers
         public IActionResult GetMovieById(string id)
         {
             var sorter = new Sorter();
-            var collector = new MovieInfoCollector();
-            var allMovies = collector.GetAllMovies();
+            var service = MovieService.GetServiceInstance();
+            var allMovies = service.GetAllMovies();
             var movieToReturn = allMovies.Where(x => x.id == id).FirstOrDefault();
             if (movieToReturn != null)
             {

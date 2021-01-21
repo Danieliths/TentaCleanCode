@@ -9,8 +9,17 @@ using System.Threading.Tasks;
 
 namespace MovieLibrary
 {
-    public class MovieInfoCollector
+    public class MovieService
     {
+        private static MovieService instance = null;
+        public static MovieService GetServiceInstance()
+        {
+            if (instance == null)
+            {
+                instance = new MovieService();
+            }
+            return instance;
+        }
         public List<Movie> GetAllMovies()
         {
             var client = new HttpClient();
