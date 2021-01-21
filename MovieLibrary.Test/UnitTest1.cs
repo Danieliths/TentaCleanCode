@@ -12,7 +12,7 @@ namespace MovieLibrary.Test
         public void SortList()
         {
             //Arrange
-            var sorter = new Sorter();
+            var sorterService = SortService.GetServiceInstance();
             List<Movie> expected = new List<Movie>
             {
                 new Movie
@@ -77,8 +77,8 @@ namespace MovieLibrary.Test
                 },
             };
             // Act
-            var actual = sorter.SortList(listToSort, true);
-            var secondActual = sorter.SortList(listToSort, false);
+            var actual = sorterService.SortList(listToSort, true);
+            var secondActual = sorterService.SortList(listToSort, false);
             //Assert
             Assert.AreEqual(expected[0].title, actual[0].title);
             Assert.AreEqual(expected[1].title, actual[1].title);
@@ -91,7 +91,7 @@ namespace MovieLibrary.Test
         public void MergeTwoLists()
         {
             //Arrange
-            var sorter = new Sorter();
+            var sorterService = SortService.GetServiceInstance();
             List<Movie> expected = new List<Movie>
             {
                 new Movie
@@ -162,7 +162,7 @@ namespace MovieLibrary.Test
                 },
             };
             // Act
-            var actual = sorter.MergeTwoLists(listToMerge1, listToMerge2);
+            var actual = sorterService.MergeTwoLists(listToMerge1, listToMerge2);
             //Assert
             Assert.AreEqual(expected[0].title, actual[0].title);
             Assert.AreEqual(expected[1].title, actual[1].title);

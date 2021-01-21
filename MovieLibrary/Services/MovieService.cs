@@ -23,7 +23,7 @@ namespace MovieLibrary
         public List<Movie> GetAllMovies()
         {
             var client = new HttpClient();
-            var sorter = new Sorter();
+            var sorter = new SortService();
             var resultSimple = client.GetAsync("https://ithstenta2020.s3.eu-north-1.amazonaws.com/topp100.json").Result;
             var resultDetailed = client.GetAsync("https://ithstenta2020.s3.eu-north-1.amazonaws.com/detailedMovies.json").Result;
             var movieListSimple = JsonSerializer.Deserialize<List<Movie>>(new StreamReader(resultSimple.Content.ReadAsStream()).ReadToEnd());
